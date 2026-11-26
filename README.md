@@ -2,15 +2,33 @@
 
 **跟着 poteto 的 pstack，学会跟 AI 共事的 12 个好习惯**
 
-- **在线阅读**：https://saideao.github.io/ai-collab/
+- **在线互动阅读**：https://saideao.github.io/ai-collab/
 - **作者**：赛德奥SD（[抖音主页](https://v.douyin.com/LMAzvDwsM20/) · [小红书主页](https://xhslink.cn/o/1rYH6zBgsMx)）
 
-## 本书包含什么
+## 全书目录（支持在线阅读或直接读 Markdown）
 
-- **共 13 讲在线互动讲义**（第 0 讲总览 + 四大模块 12 讲协作习惯），每讲配有核心思维摘要、改前改后对比与可勾选实操清单；
-- **22 份官方 `SKILL.md` 英文原文与中文双栏对照**，支持一键复制英文原文，方便直接在各类 AI 工具或聊天窗口中使用；
-- **多工具安装速查 & 技能卡索引与安全说明**，支持全文搜索（`⌘K`）以及浅色 / 护眼纸感 / 深色三套阅读主题。
+| 讲次 | 主题（Markdown 讲义） | 对应技能卡 / 原则 | 在线互动版 |
+|---|---|---|---|
+| 第 0 讲 | [AI 是一面诚实的镜子](chapters/00-总览.md) | `poteto-mode` `in-your-own-words` | [在线阅读](https://saideao.github.io/ai-collab/#/ep00) |
+| 第 1 讲 | [先学会问题叫什么（reframe）](chapters/01-reframe.md) | `reframe` | [在线阅读](https://saideao.github.io/ai-collab/#/ep01) |
+| 第 2 讲 | [要深，不要大（sharpen）](chapters/02-sharpen.md) | `sharpen` | [在线阅读](https://saideao.github.io/ai-collab/#/ep02) |
+| 第 3 讲 | [先对齐，再说人话（in-your-own-words + bro）](chapters/03-复述与说人话.md) | `in-your-own-words` `bro` | [在线阅读](https://saideao.github.io/ai-collab/#/ep03) |
+| 第 4 讲 | [带着证据来挑刺（interrogate）](chapters/04-interrogate.md) | `interrogate` | [在线阅读](https://saideao.github.io/ai-collab/#/ep04) |
+| 第 5 讲 | [一个数字先解释再相信（benchmark-checklist）](chapters/05-解释数字.md) | `benchmark-checklist` `principle-explain-the-number` | [在线阅读](https://saideao.github.io/ai-collab/#/ep05) |
+| 第 6 讲 | [先定评分表，再看答案（arena）](chapters/06-arena.md) | `arena` `swarm` | [在线阅读](https://saideao.github.io/ai-collab/#/ep06) |
+| 第 7 讲 | [分清“怎么”与“为什么”（how + why + teach）](chapters/07-how-why-teach.md) | `how` `why` `teach` | [在线阅读](https://saideao.github.io/ai-collab/#/ep07) |
+| 第 8 讲 | [修了两次还不行，怀疑前提（attack-the-premise）](chapters/08-怀疑前提.md) | `principle-attack-the-premise` `principle-fix-root-causes` | [在线阅读](https://saideao.github.io/ai-collab/#/ep08) |
+| 第 9 讲 | [通宵干活留账本（show-me-your-work）](chapters/09-留痕.md) | `show-me-your-work` `figure-it-out` | [在线阅读](https://saideao.github.io/ai-collab/#/ep09) |
+| 第 10 讲 | [把教训写进结构（reflect + correct）](chapters/10-reflect-correct.md) | `reflect` `correct` | [在线阅读](https://saideao.github.io/ai-collab/#/ep10) |
+| 第 11 讲 | [开工前先把现状捋清（recall + ketchup）](chapters/11-recall.md) | `recall` `ketchup` | [在线阅读](https://saideao.github.io/ai-collab/#/ep11) |
+| 第 12 讲 | [写一张你自己的技能卡（automate-me）](chapters/12-automate-me.md) | `automate-me` | [在线阅读](https://saideao.github.io/ai-collab/#/ep12) |
+
+## 仓库结构
+
+- `chapters/`：全部 13 讲独立 Markdown 讲义（含核心要点、原文精要、可勾选实操清单），适合直接在 GitHub 阅读或导入 Obsidian / Notion。
+- `skills/en/` & `skills/zh/`：全部 22 份官方原版 `SKILL.md` 英文原文与中文翻译。
+- `index.html`、`styles.css`、`app.js`、`data.js`：GitHub Pages 在线互动书静态站点（支持 `⌘K` 全文搜索、三套阅读主题、双栏原文对照与本地进度保存）。
 
 ## 开源致谢与许可
 
-本指南所讲解、收录与翻译的技能卡均源自 **Lauren Tan (`poteto`)** 开源的 **[pstack](https://github.com/cursor/plugins/tree/main/pstack)**，遵循原仓库 **MIT License**（完整版权与许可声明见本仓库 `LICENSE` 及每张技能卡原文页底部）。
+本指南所讲解、收录与翻译的技能卡均源自 **Lauren Tan (`poteto`)** 开源的 **[pstack](https://github.com/cursor/plugins/tree/main/pstack)**，遵循原仓库 **MIT License**（完整版权与许可声明见本仓库 [LICENSE](LICENSE)）。

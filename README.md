@@ -7,7 +7,7 @@
 
 ## 全书目录（支持在线阅读或直接读 Markdown）
 
-| 讲次 | 主题（Markdown 讲义） | 对应技能卡 / 原则 | 在线互动版 |
+| 讲次 | 主题（Markdown 章节） | 对应技能卡 / 原则 | 在线互动版 |
 |---|---|---|---|
 | 第 0 讲 | [AI 是一面诚实的镜子](chapters/00-总览.md) | `poteto-mode` `in-your-own-words` | [在线阅读](https://saideao.github.io/ai-collab/#/ep00) |
 | 第 1 讲 | [先学会问题叫什么（reframe）](chapters/01-reframe.md) | `reframe` | [在线阅读](https://saideao.github.io/ai-collab/#/ep01) |
@@ -25,10 +25,10 @@
 
 ## 仓库结构
 
-- `chapters/`：全部 13 讲独立 Markdown 讲义（含核心要点、原文精要、可勾选实操清单），适合直接在 GitHub 阅读或导入 Obsidian / Notion。
+- `chapters/`：全部 13 讲独立 Markdown 章节（含核心要点、原文精要、可勾选实操清单），适合直接在 GitHub 阅读或导入 Obsidian / Notion。
 - `skills/en/` & `skills/zh/`：全部 22 份官方原版 `SKILL.md` 英文原文与中文翻译。
 - `index.html`、`styles.css`、`app.js`、`data.js`：GitHub Pages 在线互动书静态站点（支持 `⌘K` 全文搜索、三套阅读主题、双栏原文对照与本地进度保存）。
 
 ## 开源致谢与许可
 
-本指南是 **赛德奥SD** 视频合集《高质量 AI 协作指南》的配套开源讲义。所讲解、收录与翻译的技能卡均源自 SpaceX Principal Engineer **Lauren Tan (`poteto`)** 开源的 **[pstack](https://github.com/cursor/plugins/tree/main/pstack)**，遵循原仓库 **MIT License**（完整版权与许可声明见本仓库 [LICENSE](LICENSE)）。
+本指南核心方法源自 SpaceX Principal Engineer **Lauren Tan (`poteto`)** 开源的 **[pstack](https://github.com/cursor/plugins/tree/main/pstack)**，收录与翻译的技能卡均遵循原仓库 **MIT License**（完整版权与许可声明见本仓库 [LICENSE](LICENSE)）。

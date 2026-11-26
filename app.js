@@ -412,7 +412,7 @@
 
     return `
       <section class="hero">
-        <div class="hero-eyebrow">在线互动讲义 · 共 13 讲</div>
+        <div class="hero-eyebrow">在线互动指南 · 共 13 讲</div>
         <h1>${esc(DATA.book.title)}：${esc(DATA.book.subtitle)}</h1>
         <p class="hero-desc">${esc(DATA.book.tagline)}</p>
         <blockquote class="hero-quote">
@@ -464,10 +464,10 @@
       </section>
 
       <section class="section-block">
-        <h2 class="section-heading" id="sec-origin">这本书从哪来</h2>
-        <p>本在线指南是 <strong>${esc(DATA.book.author || "赛德奥SD")}</strong> 视频合集《高质量 AI 协作指南》的配套开源讲义。核心方法源自 SpaceX Principal Engineer <strong>Lauren Tan</strong>（网名 <code>poteto</code>）开源的 AI 协作方法库 <a href="${esc(DATA.book.sourceRepo)}" target="_blank" rel="noopener noreferrer"><strong>pstack</strong></a>（${esc(DATA.book.sourceLicense)}）。</p>
+        <h2 class="section-heading" id="sec-origin">这本指南从哪来</h2>
+        <p>本在线指南核心方法源自 SpaceX Principal Engineer <strong>Lauren Tan</strong>（网名 <code>poteto</code>）开源的 AI 协作方法库 <a href="${esc(DATA.book.sourceRepo)}" target="_blank" rel="noopener noreferrer"><strong>pstack</strong></a>（${esc(DATA.book.sourceLicense)}）。</p>
         <p>Lauren 把自己每天和 AI 搭档干活的习惯，写成了 60 多份简短的英文说明（技能卡与原则）。啃完这套库之后，最让人触动的并不是什么写代码的黑科技，而是一整套能让人变得更靠谱的工作习惯——说清目标、只信证据、先找根因、把教训写进规则。</p>
-        <p>我把其中不写代码也能直接用的部分挑出来，整理成这 13 讲中文讲义，并附上全部 22 份官方 <code>SKILL.md</code> 的英文原文、中文对照翻译与可勾选实操清单，开源放到网上免费自取，方便你看完视频后真正用起来。</p>
+        <p>本指南从中挑出不写代码也能直接用的部分，整理成这 13 讲中文内容，并附上全部 22 份官方 <code>SKILL.md</code> 的英文原文、中文对照翻译与可勾选实操清单，开源放到网上，方便大家随时查阅、直接上手。</p>
       </section>
 
       <section class="section-block">
@@ -477,7 +477,7 @@
       </section>
 
       <section class="section-block">
-        <h2 class="section-heading" id="sec-howto">怎么读这份讲义</h2>
+        <h2 class="section-heading" id="sec-howto">怎么读这本指南</h2>
         <div class="callout callout-tip">
           <h4>三分钟上手建议</h4>
           <ul>
@@ -490,7 +490,7 @@
 
       <section class="section-block">
         <h2 class="section-heading" id="sec-source">出处与许可</h2>
-        <p>本指南所讲解、收录与翻译的技能卡均源自 SpaceX Principal Engineer <strong>${esc(DATA.book.sourceAuthor)}</strong> 开源的 <strong>pstack</strong>（${esc(DATA.book.sourceLicense)}），原仓库地址：<a href="${esc(DATA.book.sourceRepo)}" target="_blank" rel="noopener noreferrer">${esc(DATA.book.sourceRepo)}</a>；本指南源码与 Markdown 讲义同步开源在 <a href="https://github.com/saideao/ai-collab" target="_blank" rel="noopener noreferrer">github.com/saideao/ai-collab</a>。</p>
+        <p>本指南所讲解、收录与翻译的技能卡均源自 SpaceX Principal Engineer <strong>${esc(DATA.book.sourceAuthor)}</strong> 开源的 <strong>pstack</strong>（${esc(DATA.book.sourceLicense)}），原仓库地址：<a href="${esc(DATA.book.sourceRepo)}" target="_blank" rel="noopener noreferrer">${esc(DATA.book.sourceRepo)}</a>；本指南源码与 Markdown 章节同步开源在 <a href="https://github.com/saideao/ai-collab" target="_blank" rel="noopener noreferrer">github.com/saideao/ai-collab</a>。</p>
       </section>
 
       ${renderPager("home")}
@@ -760,7 +760,7 @@
         <section class="section-block">
           <h2 class="section-heading" id="lib-${ch.id}">
             <span>${esc(ch.shortTitle)}</span>
-            <a href="#/${ch.id}" style="font-size:13px; font-weight:500; margin-left:auto;">看本讲讲义 →</a>
+            <a href="#/${ch.id}" style="font-size:13px; font-weight:500; margin-left:auto;">看本讲内容 →</a>
           </h2>
           <div class="skill-attach-grid">
             ${list
@@ -885,7 +885,7 @@
 
       <nav class="pager" aria-label="返回章节">
         <a class="pager-card prev" href="#/${esc(sd.epId)}">
-          <span class="pager-dir">← 返回所属讲义</span>
+          <span class="pager-dir">← 返回所属章节</span>
           <span class="pager-title">${esc(sd.epTitle)}</span>
         </a>
         <a class="pager-card next" href="#/reference">
@@ -982,7 +982,7 @@
                   <td>${esc(s.group)}</td>
                   <td>${esc(s.role)}</td>
                   <td>${esc(s.codingRequired)}</td>
-                  <td><a href="#/${s.ep}" style="display:block; margin-bottom:4px;">去讲义 →</a>${origLinks ? `<span style="font-size:12px;">原文：${origLinks}</span>` : ""}</td>
+                  <td><a href="#/${s.ep}" style="display:block; margin-bottom:4px;">去章节 →</a>${origLinks ? `<span style="font-size:12px;">原文：${origLinks}</span>` : ""}</td>
                 </tr>`;
                 })
                 .join("")}

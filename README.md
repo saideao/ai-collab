@@ -31,4 +31,4 @@
 
 ## 开源致谢与许可
 
-本指南所讲解、收录与翻译的技能卡均源自 **Lauren Tan (`poteto`)** 开源的 **[pstack](https://github.com/cursor/plugins/tree/main/pstack)**，遵循原仓库 **MIT License**（完整版权与许可声明见本仓库 [LICENSE](LICENSE)）。
+本指南是 **赛德奥SD** 视频合集《高质量 AI 协作指南》的配套开源讲义。所讲解、收录与翻译的技能卡均源自 SpaceX Principal Engineer **Lauren Tan (`poteto`)** 开源的 **[pstack](https://github.com/cursor/plugins/tree/main/pstack)**，遵循原仓库 **MIT License**（完整版权与许可声明见本仓库 [LICENSE](LICENSE)）。

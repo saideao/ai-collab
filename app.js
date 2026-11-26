@@ -464,6 +464,13 @@
       </section>
 
       <section class="section-block">
+        <h2 class="section-heading" id="sec-origin">这本书从哪来</h2>
+        <p>本在线指南是 <strong>${esc(DATA.book.author || "赛德奥SD")}</strong> 视频合集《高质量 AI 协作指南》的配套开源讲义。核心方法源自 SpaceX Principal Engineer <strong>Lauren Tan</strong>（网名 <code>poteto</code>）开源的 AI 协作方法库 <a href="${esc(DATA.book.sourceRepo)}" target="_blank" rel="noopener noreferrer"><strong>pstack</strong></a>（${esc(DATA.book.sourceLicense)}）。</p>
+        <p>Lauren 把自己每天和 AI 搭档干活的习惯，写成了 60 多份简短的英文说明（技能卡与原则）。啃完这套库之后，最让人触动的并不是什么写代码的黑科技，而是一整套能让人变得更靠谱的工作习惯——说清目标、只信证据、先找根因、把教训写进规则。</p>
+        <p>我把其中不写代码也能直接用的部分挑出来，整理成这 13 讲中文讲义，并附上全部 22 份官方 <code>SKILL.md</code> 的英文原文、中文对照翻译与可勾选实操清单，开源放到网上免费自取，方便你看完视频后真正用起来。</p>
+      </section>
+
+      <section class="section-block">
         <h2 class="section-heading" id="sec-map">四组核心习惯地图</h2>
         <p>pstack 原库共有 60 多张技能卡，其中一大半面向纯软件工程。本指南精选出 12 组最通用的协作习惯——不限于写代码，日常学习、工作和做研究都能直接用，按“说清目标 → 证据验证 → 读懂与调试 → 复盘定制”四个阶段展开：</p>
         <div class="parts-grid">${partCards}</div>
@@ -483,7 +490,7 @@
 
       <section class="section-block">
         <h2 class="section-heading" id="sec-source">出处与许可</h2>
-        <p>本讲义所有技能卡均基于 <strong>${esc(DATA.book.sourceAuthor)}</strong> 开源的 <strong>pstack</strong>（${esc(DATA.book.sourceLicense)}）整理与演示，仓库地址：<a href="${esc(DATA.book.sourceRepo)}" target="_blank" rel="noopener noreferrer">${esc(DATA.book.sourceRepo)}</a>。</p>
+        <p>本指南所讲解、收录与翻译的技能卡均源自 SpaceX Principal Engineer <strong>${esc(DATA.book.sourceAuthor)}</strong> 开源的 <strong>pstack</strong>（${esc(DATA.book.sourceLicense)}），原仓库地址：<a href="${esc(DATA.book.sourceRepo)}" target="_blank" rel="noopener noreferrer">${esc(DATA.book.sourceRepo)}</a>；本指南源码与 Markdown 讲义同步开源在 <a href="https://github.com/saideao/ai-collab" target="_blank" rel="noopener noreferrer">github.com/saideao/ai-collab</a>。</p>
       </section>
 
       ${renderPager("home")}

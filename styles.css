@@ -458,6 +458,34 @@ kbd {
   font-weight: 600;
 }
 
+.nav-num {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-faint);
+  min-width: 20px;
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.nav-item:hover .nav-num {
+  color: var(--text-muted);
+}
+
+.nav-item.active .nav-num {
+  color: var(--accent);
+  opacity: 0.85;
+}
+
+.part-link-num {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-faint);
+  margin-right: 6px;
+  font-variant-numeric: tabular-nums;
+}
+
 .nav-item-label {
   flex: 1;
   min-width: 0;

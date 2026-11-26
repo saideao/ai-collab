@@ -277,7 +277,7 @@
           id: `skill/${sd.name}`,
           hash: `#/skill/${sd.name}`,
           title: `原文与翻译：${sd.name}`,
-          part: `技能卡原文 · 第 ${sd.epNum} 讲`,
+          part: `技能卡原文 · ${String(sd.epNum).padStart(2, "0")}`,
           text: `${sd.name} ${sd.zhTitle} ${sd.descEn} ${sd.zhMd} ${sd.bodyEn}`,
         });
       });
@@ -293,7 +293,7 @@
     const pct = Math.round((doneCount / total) * 100);
     const label = document.getElementById("progress-label");
     const fill = document.getElementById("progress-fill");
-    if (label) label.textContent = `${doneCount} / ${total} 讲`;
+    if (label) label.textContent = `${doneCount} / ${total} 章`;
     if (fill) fill.style.width = `${pct}%`;
   }
 
@@ -309,7 +309,9 @@
           ...DATA.chapters.filter((c) => c.part === "intro").map((c) => ({
             id: c.id,
             hash: `#/${c.id}`,
-            label: c.shortTitle,
+            num: String(c.num).padStart(2, "0"),
+            label: c.shortTitle.replace(/^\d{2}\s+/, ""),
+            fullLabel: c.shortTitle,
           })),
         ],
       },
@@ -322,7 +324,9 @@
             .map((c) => ({
               id: c.id,
               hash: `#/${c.id}`,
-              label: c.shortTitle,
+              num: String(c.num).padStart(2, "0"),
+              label: c.shortTitle.replace(/^\d{2}\s+/, ""),
+              fullLabel: c.shortTitle,
             })),
         })),
       {
@@ -346,7 +350,8 @@
             const isDone = !!state.readMap[item.id];
             return `
             <a class="nav-item ${isActive ? "active" : ""}" href="${item.hash}" data-nav-id="${item.id}">
-              <span class="nav-item-label" title="${esc(item.label)}">${esc(item.label)}</span>
+              ${item.num ? `<span class="nav-num">${esc(item.num)}</span>` : ""}
+              <span class="nav-item-label" title="${esc(item.fullLabel || item.label)}">${esc(item.label)}</span>
               ${isDone ? `<span class="nav-badge-done" title="已读">✓</span>` : ""}
             </a>`;
           })
@@ -400,7 +405,7 @@
               .map(
                 (c) => `
               <a class="part-link" href="#/${c.id}">
-                <span>第 ${c.num} 讲 · ${esc(c.shortTitle.replace(/^第 \d+ 讲：/, "").replace(/（[^）]+）$/, ""))}</span>
+                <span><span class="part-link-num">${String(c.num).padStart(2, "0")}</span>${esc(c.shortTitle.replace(/^\d{2}\s+/, "").replace(/（[^）]+）$/, ""))}</span>
                 <code>${esc(c.skills[0])}</code>
               </a>`
               )
@@ -412,7 +417,7 @@
 
     return `
       <section class="hero">
-        <div class="hero-eyebrow">在线互动指南 · 共 13 讲</div>
+        <div class="hero-eyebrow">开源在线指南 · 12 个 AI 协作习惯</div>
         <h1>${esc(DATA.book.title)}：${esc(DATA.book.subtitle)}</h1>
         <p class="hero-desc">${esc(DATA.book.tagline)}</p>
         <blockquote class="hero-quote">
@@ -420,7 +425,7 @@
           <span>— Lauren Tan (poteto), pstack Guide: If you only remember one thing</span>
         </blockquote>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#/ep00">从第 0 讲开始阅读 →</a>
+          <a class="btn btn-primary" href="#/ep00">从序章开始阅读 →</a>
           <a class="btn btn-secondary" href="#/skills">22 份技能卡原文与中文翻译</a>
           <a class="btn btn-secondary" href="#/tools">多工具安装速查</a>
         </div>
@@ -467,7 +472,7 @@
         <h2 class="section-heading" id="sec-origin">这本指南从哪来</h2>
         <p>本在线指南核心方法源自 SpaceX Principal Engineer <strong>Lauren Tan</strong>（网名 <code>poteto</code>）开源的 AI 协作方法库 <a href="${esc(DATA.book.sourceRepo)}" target="_blank" rel="noopener noreferrer"><strong>pstack</strong></a>（${esc(DATA.book.sourceLicense)}）。</p>
         <p>Lauren 把自己每天和 AI 搭档干活的习惯，写成了 60 多份简短的英文说明（技能卡与原则）。啃完这套库之后，最让人触动的并不是什么写代码的黑科技，而是一整套能让人变得更靠谱的工作习惯——说清目标、只信证据、先找根因、把教训写进规则。</p>
-        <p>本指南从中挑出不写代码也能直接用的部分，整理成这 13 讲中文内容，并附上全部 22 份官方 <code>SKILL.md</code> 的英文原文、中文对照翻译与可勾选实操清单，开源放到网上，方便大家随时查阅、直接上手。</p>
+        <p>本指南从中挑出不写代码也能直接用的部分，整理成序章与 12 个专题章节，并附上全部 22 份官方 <code>SKILL.md</code> 的英文原文、中文对照翻译与可勾选实操清单，开源放到网上，方便大家随时查阅、直接上手。</p>
       </section>
 
       <section class="section-block">
@@ -481,9 +486,9 @@
         <div class="callout callout-tip">
           <h4>三分钟上手建议</h4>
           <ul>
-            <li><strong>先看第 0 讲建立全局观</strong>：理解为什么“技能卡”只是写下来的好习惯，以及为什么一次只拿一张卡效果最好。</li>
-            <li><strong>按需挑一张卡马上试</strong>：每一讲底部都配有<strong>可勾选的实操清单</strong>（勾选进度会自动保存在本地浏览器），每一步都写清了“为什么”。</li>
-            <li><strong>不写代码也能用</strong>：前 3 讲、第 6 讲、第 8 讲的思维和提示词完全不依赖写代码；普通聊天工具可以直接复制 <code>SKILL.md</code> 正文到对话开头使用。</li>
+            <li><strong>先看序章（00）建立全局观</strong>：理解为什么“技能卡”只是写下来的好习惯，以及为什么一次只拿一张卡效果最好。</li>
+            <li><strong>按需挑一张卡马上试</strong>：每一章底部都配有<strong>可勾选的实操清单</strong>（勾选进度会自动保存在本地浏览器），每一步都写清了“为什么”。</li>
+            <li><strong>不写代码也能用</strong>：01–03、06、08 章的思维和提示词完全不依赖写代码；普通聊天工具可以直接复制 <code>SKILL.md</code> 正文到对话开头使用。</li>
           </ul>
         </div>
       </section>
@@ -681,7 +686,7 @@
     const skillAttachHTML = attachedSkills.length
       ? `
       <section class="section-block">
-        <h2 class="section-heading" id="sec-skills">本讲技能卡原文与中文翻译</h2>
+        <h2 class="section-heading" id="sec-skills">本章技能卡原文与中文翻译</h2>
         <p>点击进入二级对照页可并排阅读英文原版 <code>SKILL.md</code> 与完整中文翻译，也可以直接复制英文原文粘贴到聊天工具里使用。</p>
         <div class="skill-attach-grid">
           ${attachedSkills
@@ -706,9 +711,9 @@
 
     return `
       <div class="chapter-meta-top">
-        <div class="breadcrumb">${esc(ch.partTitle)} / 第 ${ch.num} 讲</div>
+        <div class="breadcrumb">${esc(ch.partTitle)} / ${ch.num === 0 ? "00 序章" : String(ch.num).padStart(2, "0")}</div>
         <button id="read-toggle-btn" class="read-toggle ${isRead ? "is-read" : ""}" data-read-id="${ch.id}" type="button">
-          ${isRead ? "✓ 已读本讲" : "○ 标为已读"}
+          ${isRead ? "✓ 已读本章" : "○ 标为已读"}
         </button>
       </div>
 
@@ -760,7 +765,7 @@
         <section class="section-block">
           <h2 class="section-heading" id="lib-${ch.id}">
             <span>${esc(ch.shortTitle)}</span>
-            <a href="#/${ch.id}" style="font-size:13px; font-weight:500; margin-left:auto;">看本讲内容 →</a>
+            <a href="#/${ch.id}" style="font-size:13px; font-weight:500; margin-left:auto;">看本章内容 →</a>
           </h2>
           <div class="skill-attach-grid">
             ${list
@@ -817,7 +822,7 @@
     const peerHTML =
       peerSkills.length > 1
         ? `<div class="skill-pills" style="margin-bottom:8px;">
-            <span class="pill pill-muted">同讲技能卡：</span>
+            <span class="pill pill-muted">同章技能卡：</span>
             ${peerSkills
               .map(
                 (s) =>
@@ -1067,7 +1072,7 @@
         state.readMap[id] = !state.readMap[id];
         saveJSON(STORAGE_KEYS.read, state.readMap);
         readBtn.classList.toggle("is-read", state.readMap[id]);
-        readBtn.textContent = state.readMap[id] ? "✓ 已读本讲" : "○ 标为已读";
+        readBtn.textContent = state.readMap[id] ? "✓ 已读本章" : "○ 标为已读";
         renderSidebar(currentId);
       });
     }
@@ -1092,7 +1097,7 @@
             saveJSON(STORAGE_KEYS.read, state.readMap);
             if (readBtn) {
               readBtn.classList.add("is-read");
-              readBtn.textContent = "✓ 已读本讲";
+              readBtn.textContent = "✓ 已读本章";
             }
             renderSidebar(currentId);
           }

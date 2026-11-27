@@ -682,7 +682,8 @@ kbd {
 }
 
 .social-links {
-  display: inline-flex;
+  /* 录屏期间临时隐藏抖音/小红书图标，录完改回 inline-flex 即可恢复 */
+  display: none;
   align-items: center;
   gap: 10px;
 }

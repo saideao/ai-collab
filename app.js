@@ -436,29 +436,23 @@
                 <div class="social-links">
                   ${
                     DATA.book.socials && DATA.book.socials.douyin
-                      ? `<a class="social-btn social-douyin" href="${esc(DATA.book.socials.douyin)}" target="_blank" rel="noopener noreferrer" title="访问赛德奥SD 的抖音主页">
-                          <span class="social-icon" aria-hidden="true">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                              <rect width="24" height="24" rx="5.5" fill="#161823"/>
-                              <path d="M16.6 8.2c-1.1-.6-1.9-1.7-2.1-3h-2.1v9.4c0 1.2-1 2.2-2.2 2.2s-2.2-1-2.2-2.2 1-2.2 2.2-2.2c.2 0 .5 0 .7.1V10.3c-.2 0-.5-.1-.7-.1-2.4 0-4.3 1.9-4.3 4.3s1.9 4.3 4.3 4.3 4.3-1.9 4.3-4.3V9.7c.9.7 2 1.1 3.2 1.1V8.7c-.4 0-.8-.2-1.1-.5z" fill="#25F4EE" transform="translate(-0.7,-0.5)"/>
-                              <path d="M16.6 8.2c-1.1-.6-1.9-1.7-2.1-3h-2.1v9.4c0 1.2-1 2.2-2.2 2.2s-2.2-1-2.2-2.2 1-2.2 2.2-2.2c.2 0 .5 0 .7.1V10.3c-.2 0-.5-.1-.7-.1-2.4 0-4.3 1.9-4.3 4.3s1.9 4.3 4.3 4.3 4.3-1.9 4.3-4.3V9.7c.9.7 2 1.1 3.2 1.1V8.7c-.4 0-.8-.2-1.1-.5z" fill="#FE2C55" transform="translate(0.7,0.5)"/>
-                              <path d="M16.6 8.2c-1.1-.6-1.9-1.7-2.1-3h-2.1v9.4c0 1.2-1 2.2-2.2 2.2s-2.2-1-2.2-2.2 1-2.2 2.2-2.2c.2 0 .5 0 .7.1V10.3c-.2 0-.5-.1-.7-.1-2.4 0-4.3 1.9-4.3 4.3s1.9 4.3 4.3 4.3 4.3-1.9 4.3-4.3V9.7c.9.7 2 1.1 3.2 1.1V8.7c-.4 0-.8-.2-1.1-.5z" fill="#FFFFFF"/>
-                            </svg>
-                          </span>
-                          <span>抖音</span>
+                      ? `<a class="social-icon-link" href="${esc(DATA.book.socials.douyin)}" target="_blank" rel="noopener noreferrer" aria-label="抖音主页" title="抖音：赛德奥SD">
+                          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <rect width="24" height="24" rx="6" fill="#161823"/>
+                            <path d="M16.6 8.2c-1.1-.6-1.9-1.7-2.1-3h-2.1v9.4c0 1.2-1 2.2-2.2 2.2s-2.2-1-2.2-2.2 1-2.2 2.2-2.2c.2 0 .5 0 .7.1V10.3c-.2 0-.5-.1-.7-.1-2.4 0-4.3 1.9-4.3 4.3s1.9 4.3 4.3 4.3 4.3-1.9 4.3-4.3V9.7c.9.7 2 1.1 3.2 1.1V8.7c-.4 0-.8-.2-1.1-.5z" fill="#25F4EE" transform="translate(-0.7,-0.5)"/>
+                            <path d="M16.6 8.2c-1.1-.6-1.9-1.7-2.1-3h-2.1v9.4c0 1.2-1 2.2-2.2 2.2s-2.2-1-2.2-2.2 1-2.2 2.2-2.2c.2 0 .5 0 .7.1V10.3c-.2 0-.5-.1-.7-.1-2.4 0-4.3 1.9-4.3 4.3s1.9 4.3 4.3 4.3 4.3-1.9 4.3-4.3V9.7c.9.7 2 1.1 3.2 1.1V8.7c-.4 0-.8-.2-1.1-.5z" fill="#FE2C55" transform="translate(0.7,0.5)"/>
+                            <path d="M16.6 8.2c-1.1-.6-1.9-1.7-2.1-3h-2.1v9.4c0 1.2-1 2.2-2.2 2.2s-2.2-1-2.2-2.2 1-2.2 2.2-2.2c.2 0 .5 0 .7.1V10.3c-.2 0-.5-.1-.7-.1-2.4 0-4.3 1.9-4.3 4.3s1.9 4.3 4.3 4.3 4.3-1.9 4.3-4.3V9.7c.9.7 2 1.1 3.2 1.1V8.7c-.4 0-.8-.2-1.1-.5z" fill="#FFFFFF"/>
+                          </svg>
                         </a>`
                       : ""
                   }
                   ${
                     DATA.book.socials && DATA.book.socials.xiaohongshu
-                      ? `<a class="social-btn social-xhs" href="${esc(DATA.book.socials.xiaohongshu)}" target="_blank" rel="noopener noreferrer" title="访问赛德奥SD 的小红书主页">
-                          <span class="social-icon" aria-hidden="true">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                              <rect width="24" height="24" rx="5.5" fill="#FF2442"/>
-                              <text x="12" y="15.2" text-anchor="middle" fill="#FFFFFF" font-size="7.4" font-weight="800" font-family="-apple-system, BlinkMacSystemFont, PingFang SC, sans-serif">红书</text>
-                            </svg>
-                          </span>
-                          <span>小红书</span>
+                      ? `<a class="social-icon-link" href="${esc(DATA.book.socials.xiaohongshu)}" target="_blank" rel="noopener noreferrer" aria-label="小红书主页" title="小红书：赛德奥SD">
+                          <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                            <rect width="32" height="32" rx="8" fill="#FF2442"/>
+                            <text x="16" y="19.3" text-anchor="middle" fill="#FFFFFF" font-size="8.6" font-weight="800" letter-spacing="-0.2" font-family="-apple-system, BlinkMacSystemFont, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif">小红书</text>
+                          </svg>
                         </a>`
                       : ""
                   }

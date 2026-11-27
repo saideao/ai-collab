@@ -292,7 +292,7 @@ window.PSTACK_BOOK = {
           "why": "她 README 原话：fork it. improve it. make it yours."
         }
       ],
-      "question": "这四步里，你最想先练哪一块？",
+      "question": "",
       "teaser": ""
     },
     {
